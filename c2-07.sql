@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-03-14 08:17:38
+-- 產生時間： 2024-03-14 09:36:06
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -100,9 +100,16 @@ INSERT INTO `que` (`id`, `text`, `vote`, `subject_id`) VALUES
 
 CREATE TABLE `total` (
   `id` int(10) UNSIGNED NOT NULL,
-  `news` int(5) NOT NULL,
-  `acc` text NOT NULL
+  `total` int(5) NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `total`
+--
+
+INSERT INTO `total` (`id`, `total`, `date`) VALUES
+(1, 1, '2024-03-14');
 
 -- --------------------------------------------------------
 
@@ -187,7 +194,7 @@ ALTER TABLE `que`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `total`
 --
 ALTER TABLE `total`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `user`
