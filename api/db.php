@@ -66,7 +66,7 @@ class DB
     private function sql_all($sql, $array, $other)
     {
         if (isset($this->table) && !empty($this->table)) {
-            if (isset($array)) {
+            if (is_array($array)) {
                 if (!empty($array)) {
                     $tmp = $this->a2s($array);
                     $sql .= " where " . join(" && ", $tmp);
